@@ -18,7 +18,7 @@ app.post("/",admin,async(req,res)=>{
 
 app.get("/allsongs",async(req,res)=>{
     const songs=await Song.find();
-    res.status(200).send({data:songs});
+    res.status(200).send({data:songs.reverse()});
 })
 
 app.put("/update/:id",[validObjectId,admin],async(req,res)=>{
